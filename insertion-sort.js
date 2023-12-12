@@ -1,6 +1,33 @@
 // Insertion Sort out-of-place
 // Do not modify the original array
-function insertionSort(arr) {
+function insertionSort(A) {
+
+  let ret=[]; let cry; let j=A.length-1;
+
+
+  while(j>=0)
+  {
+    console.log(ret.join(','))
+    ret.push(A[j]);
+    j--;
+
+    for(let i=ret.length-1;i>0;i--)
+    {
+        if(ret[i]<ret[i-1])
+        {
+          cry=ret[i];
+          ret[i]=ret[i-1];
+          ret[i-1]=cry;
+        }
+    }
+
+    //console.log(ret.join(','))
+
+  }
+      return ret;
+
+
+
   /*
   Pseudocode:
 
@@ -23,7 +50,41 @@ function insertionSort(arr) {
 
 // In-place Insertion Sort
 // Mutates the original array
-function insertionSortInPlace(arr) {
+function insertionSortInPlace(A) {
+
+  let cry; let j=0;
+
+
+  while(j<A.length)
+  {
+
+    //console.log(A.join(','))
+    //ret.push(A[j]);
+    //j--;
+
+    for(let i=j;i>0;i--)
+    {
+        if(A[i]<A[i-1])
+        {
+          cry=A[i];
+          A[i]=A[i-1];
+          A[i-1]=cry;
+        }
+        else
+        {
+          break;
+        }
+    }
+
+    j++;
+
+    console.log(A.join(','))
+    //console.log(ret.join(','))
+
+  }
+      return A;
+
+
   /*
   Pseudocode:
 
